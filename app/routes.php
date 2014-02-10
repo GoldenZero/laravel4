@@ -97,7 +97,7 @@ Route::controller('user', 'UserController');
 // Route group for API versioning
 Route::group(array('prefix' => 'api/v1'), function()
 {
-    Route::resource('driver', 'DriverController');
+    Route::resource('driver', 'DriversController');
     Route::resource('passenger', 'PassengerController');    
 });
 //:: Application Routes ::
