@@ -3178,5 +3178,434 @@
             "test double",
             "testing"
         ]
+    },
+    {
+        "name": "guzzle/common",
+        "version": "v3.8.1",
+        "version_normalized": "3.8.1.0",
+        "target-dir": "Guzzle/Common",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/common.git",
+            "reference": "67f6c3fd04bae387d47c2a673fa623ed8f4189bb"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/common/zipball/67f6c3fd04bae387d47c2a673fa623ed8f4189bb",
+            "reference": "67f6c3fd04bae387d47c2a673fa623ed8f4189bb",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2",
+            "symfony/event-dispatcher": ">=2.1"
+        },
+        "time": "2014-01-28 22:29:15",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.7-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Guzzle\\Common": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Common libraries used by Guzzle",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "collection",
+            "common",
+            "event",
+            "exception"
+        ]
+    },
+    {
+        "name": "guzzle/stream",
+        "version": "v3.8.1",
+        "version_normalized": "3.8.1.0",
+        "target-dir": "Guzzle/Stream",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/stream.git",
+            "reference": "fa8af730ca714861c0001cfba64aaecc5f21bb96"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/stream/zipball/fa8af730ca714861c0001cfba64aaecc5f21bb96",
+            "reference": "fa8af730ca714861c0001cfba64aaecc5f21bb96",
+            "shasum": ""
+        },
+        "require": {
+            "guzzle/common": "self.version",
+            "php": ">=5.3.2"
+        },
+        "suggest": {
+            "guzzle/http": "To convert Guzzle request objects to PHP streams"
+        },
+        "time": "2014-01-28 22:14:17",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.7-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Guzzle\\Stream": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "Guzzle stream wrapper component",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "Guzzle",
+            "component",
+            "stream"
+        ]
+    },
+    {
+        "name": "guzzle/parser",
+        "version": "v3.8.1",
+        "version_normalized": "3.8.1.0",
+        "target-dir": "Guzzle/Parser",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/parser.git",
+            "reference": "3f52387052f2e4ef083145a0f73c3654aa14e086"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/parser/zipball/3f52387052f2e4ef083145a0f73c3654aa14e086",
+            "reference": "3f52387052f2e4ef083145a0f73c3654aa14e086",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2"
+        },
+        "time": "2013-10-24 00:04:09",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.7-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Guzzle\\Parser": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Interchangeable parsers used by Guzzle",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "URI Template",
+            "cookie",
+            "http",
+            "message",
+            "url"
+        ]
+    },
+    {
+        "name": "guzzle/http",
+        "version": "v3.8.1",
+        "version_normalized": "3.8.1.0",
+        "target-dir": "Guzzle/Http",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/http.git",
+            "reference": "565fd64be16d91c840f497c5de76f86d54a822d8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/http/zipball/565fd64be16d91c840f497c5de76f86d54a822d8",
+            "reference": "565fd64be16d91c840f497c5de76f86d54a822d8",
+            "shasum": ""
+        },
+        "require": {
+            "guzzle/common": "self.version",
+            "guzzle/parser": "self.version",
+            "guzzle/stream": "self.version",
+            "php": ">=5.3.2"
+        },
+        "suggest": {
+            "ext-curl": "*"
+        },
+        "time": "2014-01-23 18:23:29",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.7-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Guzzle\\Http": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "HTTP libraries used by Guzzle",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "Guzzle",
+            "client",
+            "curl",
+            "http",
+            "http client"
+        ]
+    },
+    {
+        "name": "knplabs/packagist-api",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/KnpLabs/packagist-api.git",
+            "reference": "5d46003cfb1aca37efc84e8a0f1e8ba276a8245e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/KnpLabs/packagist-api/zipball/5d46003cfb1aca37efc84e8a0f1e8ba276a8245e",
+            "reference": "5d46003cfb1aca37efc84e8a0f1e8ba276a8245e",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/inflector": "~1.0",
+            "guzzle/http": "~3.0",
+            "php": ">=5.3.2"
+        },
+        "require-dev": {
+            "phpspec/php-diff": "*@dev",
+            "phpspec/phpspec2": "1.0.*@dev"
+        },
+        "time": "2013-11-22 09:55:31",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Packagist\\Api\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "KnpLabs Team",
+                "homepage": "http://knplabs.com"
+            }
+        ],
+        "description": "Packagist API client.",
+        "homepage": "http://knplabs.com",
+        "keywords": [
+            "api",
+            "composer",
+            "packagist"
+        ]
+    },
+    {
+        "name": "rtablada/package-installer",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/rtablada/package-installer.git",
+            "reference": "ecbf17ece3d67e67f4467608b93c46eefa25af09"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/rtablada/package-installer/zipball/ecbf17ece3d67e67f4467608b93c46eefa25af09",
+            "reference": "ecbf17ece3d67e67f4467608b93c46eefa25af09",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/config": "~4",
+            "illuminate/console": "~4",
+            "illuminate/filesystem": "~4",
+            "illuminate/support": "~4",
+            "knplabs/packagist-api": "dev-master",
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "mockery/mockery": "0.8.*"
+        },
+        "time": "2013-11-08 23:04:12",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Rtablada\\PackageInstaller": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Ryan Tablada",
+                "email": "ryan.tablada@gmail.com",
+                "homepage": "http://lucidbridge.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "An easy to use package installer for Laravel 4",
+        "keywords": [
+            "laravel"
+        ]
+    },
+    {
+        "name": "league/oauth2-server",
+        "version": "2.1.1",
+        "version_normalized": "2.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thephpleague/oauth2-server.git",
+            "reference": "98be9ab2521089a7d3a9c97fbea3927c83cdaad5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thephpleague/oauth2-server/zipball/98be9ab2521089a7d3a9c97fbea3927c83cdaad5",
+            "reference": "98be9ab2521089a7d3a9c97fbea3927c83cdaad5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "replace": {
+            "league/oauth2server": "*",
+            "lncd/oauth2": "*"
+        },
+        "require-dev": {
+            "mockery/mockery": ">=0.7.2"
+        },
+        "suggest": {
+            "zetacomponents/database": "Allows use of the build in PDO storage classes"
+        },
+        "time": "2013-06-02 12:55:01",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "League\\OAuth2\\Server": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Alex Bilbie",
+                "email": "hello@alexbilbie.com",
+                "homepage": "http://www.alexbilbie.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "A lightweight and powerful OAuth 2.0 authorization and resource server library with support for all the core specification grants. This library will allow you to secure your API with OAuth and allow your applications users to approve apps that want to access their data from your API.",
+        "homepage": "https://github.com/php-loep/oauth2-server",
+        "keywords": [
+            "Authentication",
+            "api",
+            "authorization",
+            "oauth",
+            "oauth2",
+            "resource",
+            "server"
+        ]
+    },
+    {
+        "name": "lucadegasperi/oauth2-server-laravel",
+        "version": "1.0.5",
+        "version_normalized": "1.0.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/lucadegasperi/oauth2-server-laravel.git",
+            "reference": "2a96807c54a534c6dfed5daf3c900a604cad87d3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/lucadegasperi/oauth2-server-laravel/zipball/2a96807c54a534c6dfed5daf3c900a604cad87d3",
+            "reference": "2a96807c54a534c6dfed5daf3c900a604cad87d3",
+            "shasum": ""
+        },
+        "require": {
+            "league/oauth2-server": "2.1.x",
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "league/phpunit-coverage-listener": "v1.1.2",
+            "mockery/mockery": ">=0.7.2",
+            "orchestra/testbench": "2.0.*",
+            "phpunit/phpunit": "3.7.22",
+            "squizlabs/php_codesniffer": "1.*"
+        },
+        "time": "2013-12-11 13:53:48",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/migrations",
+                "tests/TestCase.php"
+            ],
+            "psr-0": {
+                "LucaDegasperi\\OAuth2Server": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Luca Degasperi",
+                "email": "packages@lucadegasperi.com"
+            }
+        ],
+        "description": "A Laravel 4 wrapper for the popular OAuth 2.0 Server package league/oauth2-server",
+        "keywords": [
+            "api",
+            "laravel",
+            "oauth",
+            "oauth2",
+            "server"
+        ]
     }
 ]

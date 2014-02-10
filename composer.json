@@ -27,7 +27,9 @@
 		"jasonlewis/basset": "dev-master",
 		"robclancy/presenter": "1.2.*",
         "j20/php-uuid": "dev-master",
-        "bllim/datatables": "*"
+        "bllim/datatables": "*",
+        "rtablada/package-installer": "dev-master",
+        "lucadegasperi/oauth2-server-laravel": "1.0.x"
 	},
 	"require-dev": {
         "way/generators": "dev-master",
