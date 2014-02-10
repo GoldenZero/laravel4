@@ -91,6 +91,15 @@ Route::post('user/login', 'UserController@postLogin');
 # User RESTful Routes (Login, Logout, Register, etc)
 Route::controller('user', 'UserController');
 
+
+
+// API routes 
+// Route group for API versioning
+Route::group(array('prefix' => 'api/v1'), function()
+{
+    Route::resource('driver', 'DriverController');
+    Route::resource('passenger', 'PassengerController');    
+});
 //:: Application Routes ::
 
 # Filter for detect language

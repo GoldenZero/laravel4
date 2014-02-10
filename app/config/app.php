@@ -123,6 +123,7 @@ return array(
 		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 		'Rtablada\PackageInstaller\PackageInstallerServiceProvider',
 		'LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider',
+		'Way\Generators\GeneratorsServiceProvider',
 
 	),
 

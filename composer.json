@@ -29,7 +29,8 @@
         "j20/php-uuid": "dev-master",
         "bllim/datatables": "*",
         "rtablada/package-installer": "dev-master",
-        "lucadegasperi/oauth2-server-laravel": "1.0.x"
+        "lucadegasperi/oauth2-server-laravel": "1.0.x",
+        "way/generators": "dev-master"
 	},
 	"require-dev": {
         "way/generators": "dev-master",
