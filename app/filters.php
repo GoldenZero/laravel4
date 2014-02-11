@@ -93,9 +93,11 @@ Entrust::routeNeedsPermission( 'admin/roles*', 'manage_roles', Redirect::to('/ad
 
 Route::filter('csrf', function()
 {
-	if (Session::getToken() != Input::get('csrf_token') &&  Session::getToken() != Input::get('_token'))
+	if (Session::getToken()  != getallheaders()['HTTP_CSRF_TOKEN'])
 	{
-		throw new Illuminate\Session\TokenMismatchException;
+		return Response::json([
+            'message' => 'I’m a teapot !!! you stupid hacker :D '
+        ], 418);
 	}
 });
 
@@ -131,9 +133,10 @@ API filter response
 
 Route::filter('jsonResponse', function($route, $request, $response = null)
 {
+    $status=array("200"=>"OK","401"=>"Unauthorized");
     $data = json_decode($response->getContent(),true);
     $data['status']="OK";
-    $data['status_code']=200;
+    $data['status_code']=isset($status[$response->getStatusCode()])?$status[$response->getStatusCode()]:"OK";
     $response->setContent(json_encode($data));
     $response->header('Content-Type', 'application/json');
 });

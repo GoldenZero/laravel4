@@ -97,6 +97,8 @@ Route::controller('user', 'UserController');
 // Route group for API versioning
 Route::group(array('prefix' => 'api/v1','after'=>'jsonResponse'), function()
 {
+    //Special routes
+    Route::get('drivers/login/{username}/{password}', 'DriversController@login');
     Route::resource('drivers', 'DriversController');
     Route::resource('passengers', 'PassengerController');    
 });
@@ -116,7 +118,16 @@ Route::get('contact-us', function()
 Route::get('{postSlug}', 'BlogController@getView');
 Route::post('{postSlug}', 'BlogController@postView');
 
-# Index Page - Last route, no matches
-Route::get('/', array('before' => 'detectLang','uses' => 'BlogController@getIndex'));
 
-Route::resource('vehicles', 'VehiclesController');
+/* Angular JS Routes*/
+Route::group(array('prefix' => 'service','after'=>'jsonResponse'), function() {
+    Route::resource('authenticate', 'AuthenticationController');
+    Route::resource('drivers', 'DriversController');
+});
+
+# Index Page - Last route, no matches
+//Route::get('/', array('before' => 'detectLang','uses' => 'BlogController@getIndex'));
+Route::get('/', function()
+{
+    return View::make('index');
+});

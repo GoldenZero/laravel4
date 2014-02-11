@@ -3,6 +3,17 @@
 class DriversController extends BaseController {
 
 	/**
+	* Login
+	**/
+	public function login($username,$password){
+		$driver = Driver::whereraw("username = ? and password = ?",array($username,$password))->with('vehicle')->first();
+		if($driver){
+			return Response::json(array("driver"=>$driver->toArray()));
+		}else{
+			return Response::json(array("error"=>"wrong login"),401);
+		}
+	}
+	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
@@ -11,18 +22,7 @@ class DriversController extends BaseController {
 	{
         //return Response::json(Driver::all(),200);
         $drivers = Driver::all();
-        $response = array();
-        foreach ($drivers as $driver) {
-        	$response[]= array(
-        		"pk"=>$driver->pk,
-        		"name"=>$driver->name,
-        		"phone"=>$driver->phone,
-        		"photo"=>$driver->photo,
-        		"rate"=>"3",
-        		"car"=>array("model"=>"1","plate"=>"33")
-        		);
-        }
-        return Response::json($response);
+		return Response::json(array("drivers"=>$drivers->toArray()));
 	}
 
 	/**
@@ -53,16 +53,8 @@ class DriversController extends BaseController {
 	 */
 	public function show($id)
 	{
-		$driver = Driver::where("pk","=",$id)->firstOrFail();
-		$response['driver']= array(
-        		"pk"=>$driver->pk,
-        		"name"=>$driver->firstname." ".$driver->lastname,
-        		"phone"=>$driver->phone,
-        		"photo"=>$driver->photo,
-        		"rate"=>"3",
-        		"car"=>array("model"=>"1","plate"=>"33")
-        		);
-		return Response::json($response);
+		$driver = Driver::where("pk","=",$id)->with('vehicle')->firstOrFail();
+		return Response::json(array("driver"=>$driver->toArray()));
 	}
 
 	/**
