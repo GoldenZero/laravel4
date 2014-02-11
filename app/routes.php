@@ -95,7 +95,7 @@ Route::controller('user', 'UserController');
 
 // API routes 
 // Route group for API versioning
-Route::group(array('prefix' => 'api/v1'), function()
+Route::group(array('prefix' => 'api/v1','after'=>'jsonResponse'), function()
 {
     Route::resource('driver', 'DriversController');
     Route::resource('passenger', 'PassengerController');    

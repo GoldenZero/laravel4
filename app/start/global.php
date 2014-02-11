@@ -74,6 +74,21 @@ App::error(function(Exception $exception, $code)
 
 /*
 |--------------------------------------------------------------------------
+| Application Error Handler
+|--------------------------------------------------------------------------
+|
+| Here you may handle any errors that occur in your application, including
+| logging them or displaying custom views for specific errors. You may
+| even register several error handlers to handle different types of
+| exceptions. If nothing is returned, the default error view is
+| shown, which includes a detailed stack trace during debug.
+|
+*/
+
+require __DIR__.'/../errors.php';
+
+/*
+|--------------------------------------------------------------------------
 | Maintenance Mode Handler
 |--------------------------------------------------------------------------
 |
@@ -100,3 +115,12 @@ App::down(function()
 */
 
 require __DIR__.'/../filters.php';
+
+/*
+|--------------------------------------------------------------------------
+| Register Event Listeners
+|--------------------------------------------------------------------------
+|
+*/
+
+require __DIR__.'/../events.php';

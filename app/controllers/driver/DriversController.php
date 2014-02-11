@@ -10,7 +10,19 @@ class DriversController extends BaseController {
 	public function index()
 	{
         //return Response::json(Driver::all(),200);
-        Response::json(Driver::all()->toJson(), 404);
+        $drivers = Driver::all();
+        $response = array();
+        foreach ($drivers as $driver) {
+        	$response[]= array(
+        		"pk"=>$driver->pk,
+        		"name"=>$driver->name,
+        		"phone"=>$driver->phone,
+        		"photo"=>$driver->photo,
+        		"rate"=>"3",
+        		"car"=>array("model"=>"1","plate"=>"33")
+        		);
+        }
+        return Response::json($response);
 	}
 
 	/**
@@ -41,8 +53,16 @@ class DriversController extends BaseController {
 	 */
 	public function show($id)
 	{
-		$driver = Driver::find($id)->toArray();
-        return View::make('drivers.show',array('driver'=>$driver));
+		$driver = Driver::where("pk","=",$id)->firstOrFail();
+		$response['driver']= array(
+        		"pk"=>$driver->pk,
+        		"name"=>$driver->firstname." ".$driver->lastname,
+        		"phone"=>$driver->phone,
+        		"photo"=>$driver->photo,
+        		"rate"=>"3",
+        		"car"=>array("model"=>"1","plate"=>"33")
+        		);
+		return Response::json($response);
 	}
 
 	/**
@@ -77,5 +97,6 @@ class DriversController extends BaseController {
 	{
 		//
 	}
+
 
 }

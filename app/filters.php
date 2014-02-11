@@ -122,3 +122,18 @@ Route::filter('detectLang',  function($route, $request, $lang = 'auto')
         App::setLocale($userLang);
     }
 });
+
+
+/*
+API filter response
+*/
+
+
+Route::filter('jsonResponse', function($route, $request, $response = null)
+{
+    $data = json_decode($response->getContent(),true);
+    $data['status']="OK";
+    $data['status_code']=200;
+    $response->setContent(json_encode($data));
+    $response->header('Content-Type', 'application/json');
+});
