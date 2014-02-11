@@ -21,8 +21,14 @@ angular.module('myApp')
         }
 
         Drivers.get({},function(response){
-            $scope.drivers = response.drivers
+            $scope.drivers = response.drivers;
         })
+
+        $scope.gridOptions = { 
+            data: 'drivers',
+            columnDefs: [{field:'username', displayName:'User Name'}, {field:'firstname', displayName:'First Name'},{field:'lastname', displayName:'Last Name'}]
+        };
+
         $scope.logout = function (){
             Authenticate.get({},function(response){
                 delete sessionStorage.authenticated
